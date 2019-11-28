@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CuentasBancarias:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CuentasBancarias_jar</output-path>
+    <root id="archive" name="CuentasBancarias.jar">
+      <element id="module-output" name="CuentasBancarias" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
