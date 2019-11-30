@@ -1,7 +1,6 @@
 package cuentas;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class ListaCuentas {
     public ArrayList<Cuenta> arrayCuentas = null;
