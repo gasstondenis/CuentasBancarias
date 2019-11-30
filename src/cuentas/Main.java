@@ -15,6 +15,7 @@ public class Main {
     }
     public static void main(String[] args) {
 //      OBJETOS VARIABLES AUXILIARES PARA DIFERENTES INSTANCIAS DEL CÓDIGO
+        iniciarGUI();
 
         Scanner reader = new Scanner(System.in);
         Scanner readerString = new Scanner(System.in);
@@ -52,8 +53,8 @@ public class Main {
                         cuentaCreada = new Cuenta(usuario, nroCuenta, password);
 
 //              VALIDACIÓNES DE OPERACIÓN
-                        if (administrarCuenta.darDeAlta(cuentaCreada)) System.out.println("Operación exitosa.");
-                        else System.err.println("Ha ocurrido un error inesperado.");
+                        if (administrarCuenta.darDeAlta(cuentaCreada)) System.out.println("Operación exitosa.\n");
+                        else System.err.println("Ha ocurrido un error inesperado.\n");
                         break;
 
                     case 2:
@@ -64,8 +65,8 @@ public class Main {
                         System.out.print("Ingrese la contraseña de la cuenta asociada al numero ingresado: ");
                         password = readerString.nextLine();
 //              VALIDACIONES DE OPERACIÓN
-                        if (administrarCuenta.darDeBaja(nroCuenta, password)) System.out.println("Operación exitosa.");
-                        else System.err.println("Ha ocurrido un error, quizá la cuenta que desea eliminar no exite.");
+                        if (administrarCuenta.darDeBaja(nroCuenta, password)) System.out.println("Operación exitosa.\n");
+                        else System.err.println("Ha ocurrido un error, quizá la cuenta que desea eliminar no exite.\n");
                         break;
 
                     case 3:
@@ -91,7 +92,7 @@ public class Main {
 //      CONSULTA DE SALDO
                                         case 1:
 
-                                            System.out.println("Su saldo es: $" + cuentaBuscada.getSaldo());
+                                            System.out.println("Su saldo es: $" + cuentaBuscada.getSaldo()+"\n");
                                             break;
 
                                         case 2:
@@ -108,9 +109,9 @@ public class Main {
                                             monto = reader.nextDouble();
 //              VALIDACIONES DE OPERACION
                                         if (!(administrarCuenta.extraerSaldo(cuentaBuscada, monto)))
-                                                System.err.println("Su saldo es insuficiente.");
+                                                System.err.println("Su saldo es insuficiente.\n");
 
-                                        else System.out.println("Operación exitosa.");
+                                        else System.out.println("Operación exitosa.\n");
 
                                         break;
 
@@ -124,7 +125,7 @@ public class Main {
                                             break;
 
                                         default:
-                                            System.err.println("Opción no valida.");
+                                            System.err.println("Opción no valida.\n");
                                             break;
 
                                     }
@@ -132,10 +133,10 @@ public class Main {
                                 } while (opcion != 5);
 
 //      ELSE AL SEGUNDO IF DE LA OPCION ADMINISTRAR CUENTA
-                            } else System.err.println("Validación de cuenta erroneo.");
+                            } else System.err.println("Validación de cuenta erroneo.\n");
 
 //      ELSE AL PRIMER IF DE LA OPCION ADMINISTRAR CUENTA
-                        } else System.err.println("La cuenta a la que desea acceder no existe.");
+                        } else System.err.println("La cuenta a la que desea acceder no existe.\n");
 
                         break;
                     case 4:
@@ -143,11 +144,13 @@ public class Main {
                         break;
 //      OPCION PREDETERMINADA EN CASO DE QUE EL NUMERO INGRESADO NO ESTE CONTEMPLADO
                     default:
-                        System.err.println("Opción no valida.");
+                        System.err.println("Opción no valida.\n");
                         break;
                     }
 
         } while(opcion != 4);
+
+
 
 //      FIN DEL PROGRAMA
     }
