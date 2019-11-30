@@ -1,9 +1,5 @@
 package cuentas;
 
-
-import java.util.ArrayList;
-
-
 public class AdministrarCuenta {
     private Almacenamiento almacenamiento = new Almacenamiento();
     private AltaBaja altaBaja = new AltaBaja();
@@ -25,8 +21,7 @@ public class AdministrarCuenta {
         objeto = buscarCuenta(nroCuenta);
         if (objeto != null) {
             if (objeto.getPassword().equals(password)) {
-                indice = objeto.getIndiceCuenta();
-                listaCuentas.arrayCuentas.remove(indice);
+                listaCuentas.arrayCuentas.remove(listaCuentas.i);
                 exito = altaBaja.borrarCuenta(listaCuentas.arrayCuentas);
             }
         }
@@ -36,12 +31,14 @@ public class AdministrarCuenta {
 
     Cuenta buscarCuenta(int nroCuenta){
         Cuenta cuenta = null;
+        listaCuentas.i = 0;
         if (listaCuentas.arrayCuentas != null) {
-            while (listaCuentas.arrayCuentas.iterator().hasNext()){
-                if ((listaCuentas.arrayCuentas.iterator().next()).getNroCuenta() == nroCuenta){
-                    cuenta = listaCuentas.iterador().next();
+            for (Cuenta arreglo: listaCuentas.arrayCuentas) {
+                if ((listaCuentas.arrayCuentas.get(listaCuentas.i)).getNroCuenta() == nroCuenta){
+                    cuenta = listaCuentas.arrayCuentas.get(listaCuentas.i);
                     break;
                 }
+                listaCuentas.i++;
             }
         }
         return cuenta;
