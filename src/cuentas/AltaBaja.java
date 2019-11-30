@@ -10,12 +10,10 @@ public class AltaBaja {
 
     boolean crearCuenta(ArrayList arrayCuentas){
         creado = almacenamiento.modArchivoCuenta(arrayCuentas);
-        if (creado) Cuenta.indiceCuenta++;
         return creado;
     }
     boolean borrarCuenta(ArrayList<Cuenta> cuenta){
         creado = almacenamiento.modArchivoCuenta(cuenta);
-        if (creado) Cuenta.indiceCuenta--;
         return creado;
     }
 
