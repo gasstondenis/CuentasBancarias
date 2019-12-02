@@ -10,11 +10,13 @@ public class Almacenamiento {
     private ObjectOutputStream saliendo;
     private FileInputStream entrada;
     private ObjectInputStream entrando;
+    private boolean exito;
+    private ArrayList<Cuenta> cuentas;
 
 //  Métodos de clase
 
     boolean modArchivoCuenta (ArrayList arrayCuentas){
-        boolean exito = true;
+        exito = true;
         try {
             salida = new FileOutputStream("/home/gaston/Tecnicatura Universitaria en Programacion/2DO CUATRIMESTRE/Lab de Computacion 2/TPI/Cuentas/cuentas.bin");
             saliendo = new ObjectOutputStream(salida);
@@ -34,7 +36,6 @@ public class Almacenamiento {
     }
 
     ArrayList<Cuenta> busquedaArchivoCuenta(){
-        ArrayList<Cuenta> cuentas;
         try {
             entrada = new FileInputStream("/home/gaston/Tecnicatura Universitaria en Programacion/2DO CUATRIMESTRE/Lab de Computacion 2/TPI/Cuentas/cuentas.bin");
             entrando = new ObjectInputStream(entrada);
