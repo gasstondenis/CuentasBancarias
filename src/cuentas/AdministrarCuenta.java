@@ -3,7 +3,7 @@ package cuentas;
 public class AdministrarCuenta {
     private Almacenamiento almacenamiento = new Almacenamiento();
     private AltaBaja altaBaja = new AltaBaja();
-    ListaCuentas listaCuentas = new ListaCuentas();
+    private ListaCuentas listaCuentas = new ListaCuentas();
 
 
 
@@ -51,18 +51,27 @@ public class AdministrarCuenta {
         }
     }
 
-    boolean extraerSaldo(Cuenta cuenta, double monto){
-        boolean retorno = true;
-        return cuenta.descontarSaldo(monto);
-
+    boolean extraerSaldo(int nroCuenta, double monto){
+        boolean retorno = false;
+        Cuenta cuenta = buscarCuenta(nroCuenta);
+        retorno = cuenta.descontarSaldo(monto);
+        if (retorno) {
+            listaCuentas.arrayCuentas.set(listaCuentas.i, cuenta);
+        }
+        return retorno;
     }
-    void acreditarSaldo(Cuenta cuenta, double monto){
+    void acreditarSaldo(int nroCuenta, double monto){
+        Cuenta cuenta;
+        cuenta = buscarCuenta(nroCuenta);
         cuenta.incrementarSaldo(monto);
+        listaCuentas.arrayCuentas.set(listaCuentas.i, cuenta);
     }
-
-    int contadorCuentas(){
-        return altaBaja.getContadorCuentas();
+    void actualizarArchivo(){
+        almacenamiento.modArchivoCuenta(listaCuentas.arrayCuentas);
     }
-
-
+    void cambiarContraseña(int nroCuenta, String password){
+        Cuenta cuenta = buscarCuenta(nroCuenta);
+        cuenta.setPassword(password);
+        listaCuentas.arrayCuentas.set(listaCuentas.i, cuenta);
+    }
 }
