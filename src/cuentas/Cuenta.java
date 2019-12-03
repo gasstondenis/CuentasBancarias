@@ -8,13 +8,12 @@ public class Cuenta implements Serializable {
     private double saldo;
     private int nroCuenta;
     private String password;
-    static int indiceCuenta = 0;
 
-    Cuenta(String usuario, int nroCuenta, String password) {
+    Cuenta(String usuario, int nroCuenta, String password, double saldo) {
         this.usuario = usuario;
         this.nroCuenta = nroCuenta;
         this.password = password;
-        this.saldo = 0;
+        this.saldo = saldo;
     }
 
     public double getSaldo() {
@@ -23,10 +22,6 @@ public class Cuenta implements Serializable {
 
     int getNroCuenta() {
         return nroCuenta;
-    }
-
-    public String getUsuario() {
-        return usuario;
     }
 
     String getPassword() {
@@ -47,10 +42,6 @@ public class Cuenta implements Serializable {
             exito = false;
         } else this.saldo -= monto;
         return exito;
-    }
-
-    int getIndiceCuenta() {
-        return indiceCuenta;
     }
 
     public void setPassword(String password) {
