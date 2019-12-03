@@ -2,7 +2,6 @@ package cuentas;
 
 import java.util.ArrayList;
 
-
 public class ListaCuentas {
     public ArrayList<Cuenta> arrayCuentas = null;
     int i;
@@ -19,5 +18,3 @@ public class ListaCuentas {
         return arrayCuentas;
     }
 }
-
-
