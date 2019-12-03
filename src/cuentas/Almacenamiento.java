@@ -20,7 +20,7 @@ public class Almacenamiento {
     boolean modArchivoCuenta (ArrayList arrayCuentas){
         exito = true;
         try {
-            salida = new FileOutputStream("/home/gaston/Tecnicatura Universitaria en Programacion/2DO CUATRIMESTRE/Lab de Computacion 2/TPI/Cuentas/cuentas.bin");
+            salida = new FileOutputStream("Cuentas/cuentas.bin");
             saliendo = new ObjectOutputStream(salida);
             saliendo.writeObject(arrayCuentas);
 
@@ -39,7 +39,7 @@ public class Almacenamiento {
 //  Método para extraer el arreglo de cuentas del archivo
     ArrayList<Cuenta> busquedaArchivoCuenta(){
         try {
-            entrada = new FileInputStream("/home/gaston/Tecnicatura Universitaria en Programacion/2DO CUATRIMESTRE/Lab de Computacion 2/TPI/Cuentas/cuentas.bin");
+            entrada = new FileInputStream("Cuentas/cuentas.bin");
             entrando = new ObjectInputStream(entrada);
             cuentas = (ArrayList<Cuenta>) entrando.readObject();
         } catch (IOException e){
