@@ -15,6 +15,8 @@ public class Almacenamiento {
 
 //  Métodos de clase
 
+
+//  Metodo para sobreescribir el archivo con el arreglo modificado
     boolean modArchivoCuenta (ArrayList arrayCuentas){
         exito = true;
         try {
@@ -34,7 +36,7 @@ public class Almacenamiento {
 
         return exito;
     }
-
+//  Método para extraer el arreglo de cuentas del archivo
     ArrayList<Cuenta> busquedaArchivoCuenta(){
         try {
             entrada = new FileInputStream("/home/gaston/Tecnicatura Universitaria en Programacion/2DO CUATRIMESTRE/Lab de Computacion 2/TPI/Cuentas/cuentas.bin");
